@@ -1,0 +1,78 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 42b4e5c6c430cc3b08dd3ad1349b75b2fe543fe83ba5b52758579d3cc7df535e
+
+name:           modelstutor
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/modelstutor#readme>
+homepage:       https://github.com/githubuser/modelstutor#readme
+bug-reports:    https://github.com/githubuser/modelstutor/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/modelstutor
+
+library
+  exposed-modules:
+      Enumerator
+      GPLevaluator
+      GPLIenumerator
+      GPLIevaluator
+      GPLIparser
+      GPLparser
+      Lib
+      PrettyFormulas
+      PrintModels
+      RandomModels
+      Wffs
+  other-modules:
+      Paths_modelstutor
+  hs-source-dirs:
+      src
+  build-depends:
+      ansi-terminal
+    , base >=4.7 && <5
+    , random
+  default-language: Haskell2010
+
+executable modelstutor
+  main-is: Main.lhs
+  other-modules:
+      Paths_modelstutor
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ansi-terminal
+    , base >=4.7 && <5
+    , modelstutor
+    , random
+  default-language: Haskell2010
+
+test-suite modelstutor-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_modelstutor
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ansi-terminal
+    , base >=4.7 && <5
+    , modelstutor
+    , random
+  default-language: Haskell2010
